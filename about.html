@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Metrics Project</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/half-slider.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Start</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a  href="#">Explanation</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Half Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('slide1.png');"></div>
+                <div class="carousel-caption">
+                    <h2>Prof. Chandrasekar T.</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below.http://placehold.it/1900x1080&text=Tool for calculating Maintainability Index and Weighted method-->
+                <div class="fill" style="background-image:url('slide2.png');"></div>
+                <div class="carousel-caption">
+                    <h2>Metrics Tool</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Tool for calculating MI & WMC</h1>
+                <p><h2>Maintainability Index (MI)</h2>
+Maintainability Index is a software metric which measures how maintainable (easy to support and change) the source code is. The maintainability index is calculated as a factored formula consisting of Lines Of Code, Cyclomatic Complexity and Halstead volume. It is used in several automated software metric tools, including the Microsoft Visual Studio 2010 development environment, which uses a shifted scale (0 to 100) derivative.<br>
+Calculation
+<br>
+First we need to measure the following metrics from the source code:
+<br><br>
+    V = Halstead Volume<br>
+    G = Cyclomatic Complexity<br>
+    LOC = count of Lines Of Code<br> 
+<br>
+From these measurements the MI can be calculated:
+<br><br>
+The original formula:<br>
+MI = 171 - 5.2 * ln(V) - 0.23 * (G) - 16.2 * ln(LOC)
+[article cited from Wikipedia]<br>
+
+<h2>weighted methods per class</h2>
+The WMC metric is the sum of the complexities of all class methods. It is an indicator of how much effort is required to develop and maintain a particular class. RefactorIT sums the V(G) (cyclomatic complexity) of all declared methods and constructors of class to calculate the WMC. A class with a low WMC usually points to greater polymorphism. A class with a high WMC indicates that the class is complex (application specific) and therefore harder to reuse and maintain. The lower limit for WMC in RefactorIT is default 1 because a class should consist of at least one function and the upper default limit is 50.
+<br>
+The weighted methods per class metric is based on the intuition that the number of methods per class is a significant indication of the complexity of the software. Further consideration may be necessary to avoid giving full weight to trivial methods, for example, get and set methods. The WMC includes the provision for weighting the methods. Let C be a set of classes each with the number of methods M1,…, 
+Mn. Let c1, …, cn be the complexity (weights) of the classes (the value that is to be used for ci is not defined in the paper).
+This is the only metric in the suite that is averaged over the classes in a system. In the examples, we will assume ci is equal to 1.
+
+<img src="1.jpg">
+</p>
+            </div>
+        </div>
+
+        <hr>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Balayeswanth B 12MSE0212</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
